@@ -8,6 +8,19 @@ import java.time.LocalDateTime;
 
 @Entity
 public class Product {
+    //Here JoinColumn states that this entity is the owner of the relationship
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     @Id
     @GeneratedValue(strategy =
             GenerationType.IDENTITY)//Vleren e ID e menaxhon vete databaza
@@ -21,7 +34,6 @@ public class Product {
     @CreationTimestamp
     private LocalDateTime createAt;
 
-    private Integer quantity;
     private String description;
     private Double price;
 
