@@ -13,6 +13,8 @@ public class InventoryManagementSystem //Admini
         Scanner scanner = new Scanner(System.in);
         ProductRequest product = new ProductRequest();
         ProductServiceImpl productService = new ProductServiceImpl();
+
+
         System.out.println("Klikoni 1 per te shtuar te dhena , klikoni 5 per exit" +
                 "Kliko 2 per te gjetur me ane te ID");
         int n = scanner.nextInt();

@@ -11,6 +11,7 @@ public class Product {
     //Here JoinColumn states that this entity is the owner of the relationship
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
+
     private Category category;
 
     public Category getCategory() {
@@ -36,6 +37,13 @@ public class Product {
 
     private String description;
     private Double price;
+
+    public Product() {
+    }
+
+    public Product(Long id) {
+        this.id = id;
+    }
 
     public Long getId() {
         return id;
