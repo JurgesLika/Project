@@ -30,12 +30,21 @@ public class ProductDaoImpl implements ProductDao{
 
     @Override
     public List<Product> findAll() {
-        return null;
+        try (Session session = sessionFactory.openSession()) {
+            Query<Product> query = session.createQuery("FROM Product", Product.class);
+            return query.list();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
     public Product findById(Long id) {
-        return null;
+        Session session = sessionFactory.openSession();
+        Product product = session.get(Product.class, id);
+        session.close();
+        return product;
     }
 
     @Override
