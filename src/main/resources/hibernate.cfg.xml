@@ -23,5 +23,8 @@
         <!-- Mention annotated class -->
         <mapping class="entity.Product" />
         <mapping class="entity.Category" />
+        <mapping class="entity.OrderItems" />
+        <mapping class="entity.Order" />
+        <mapping class="entity.Client" />
     </session-factory>
 </hibernate-configuration>
