@@ -100,4 +100,17 @@ public class Product {
     public void setCreateAt(LocalDateTime createAt) {
         this.createAt = createAt;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", quantity=" + quantity +
+                ", updateAt=" + updateAt +
+                ", createAt=" + createAt +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

@@ -9,6 +9,8 @@ import entity.Product;
 import org.hibernate.SessionFactory;
 import validator.ProductValidator;
 
+import java.util.List;
+
 public class ProductServiceImpl implements ProductService{
     SessionFactory sessionFactory = HibernateConfig.getSessionFactory();
     ProductDao productDao = new ProductDaoImpl(sessionFactory);
@@ -20,5 +22,15 @@ public class ProductServiceImpl implements ProductService{
         Product product = ProductConventer
                 .convertToEntity(request);
         productDao.save(product);
+    }
+
+    @Override
+    public Product findById(Long id) {
+        return productDao.findById(id);
+    }
+
+    @Override
+    public List<Product> findAll() {
+        return productDao.findAll();
     }
 }
